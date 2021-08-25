@@ -1,19 +1,13 @@
 # uniapp-project-template
 
-## Project setup
-```
-npm install
-```
+## 介绍
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+uniapp vue-cli 模式的基本模板，方便新建项目时不用安装配置，包含了以下插件：
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [x] vue2
+- [x] typescript
+- [x] Eslint
+- [x] Prettier
+- [x] lint-staged
+- [x] husky
+- [x] commitlint
