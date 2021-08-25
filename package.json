@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "serve": "npm run dev:h5",
     "build": "npm run build:h5",
     "build:app-plus": "cross-env NODE_ENV=production UNI_PLATFORM=app-plus vue-cli-service uni-build",
@@ -44,7 +45,7 @@
   "dependencies": {
     "@dcloudio/uni-app-plus": "^2.0.0-31920210709003",
     "@dcloudio/uni-h5": "^2.0.0-31920210709003",
-    "@dcloudio/uni-helper-json": "*",
+    "@dcloudio/uni-helper-json": "^1.0.13",
     "@dcloudio/uni-i18n": "^2.0.0-31920210709003",
     "@dcloudio/uni-mp-360": "^2.0.0-31920210709003",
     "@dcloudio/uni-mp-alipay": "^2.0.0-31920210709003",
@@ -69,6 +70,8 @@
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "^7.2.0",
     "@babel/runtime": "~7.12.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@dcloudio/types": "*",
     "@dcloudio/uni-automator": "^2.0.0-31920210709003",
     "@dcloudio/uni-cli-shared": "^2.0.0-31920210709003",
@@ -79,16 +82,26 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-31920210709003",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-31920210709003",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-31920210709003",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-typescript": "*",
     "@vue/cli-service": "~4.5.0",
     "babel-plugin-import": "^1.11.0",
     "cross-env": "^7.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-vue": "^7.16.0",
+    "husky": "^7.0.2",
     "jest": "^25.4.0",
+    "lint-staged": "^11.1.2",
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "prettier": "2.3.2",
     "typescript": "^3.0.0",
+    "vue-eslint-parser": "^7.10.0",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
@@ -97,5 +110,11 @@
   ],
   "uni-app": {
     "scripts": {}
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
